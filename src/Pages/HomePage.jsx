@@ -224,11 +224,11 @@ const HomePage = () => {
           </div>
         </div>
         
-        <div className="mt-6 lg:mt-0 lg:w-[20%] flex items-center justify-center relative bottom-44">
+        {/* <div className="mt-6 lg:mt-0 lg:w-[20%] flex items-center justify-center relative bottom-44">
           <button className="bg-red-500 text-white font-bold py-2 px-6 rounded-full hover:bg-gray-900 transition-colors">
             View All Rooms
           </button>
-        </div>
+        </div> */}
       </div>
       <div className="w-full flex flex-col items-center px-4">
             <div className='h-[20vh] w-full border-2 flex items-center justify-center rounded-xl'>
