@@ -10,9 +10,11 @@ import RoomTwo from "../assets/room2.webp"
 import RoomThree from "../assets/room3.webp"
 import RoomFour from "../assets/room4.webp"
 import Footer from '../Components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [RoomOne, RoomTwo, RoomThree, RoomFour];
@@ -27,7 +29,9 @@ const HomePage = () => {
     { icon: <FaWifi size={40} className='text-blue-400' />, label: "Free Wifi" },
     { icon: <FaVideo size={40} className='text-red-500'/>, label: "CCTV Security" }
 ];
-
+    const handleNavigate=()=>{
+      navigate("/contact")
+    }
   return (
     <>
     <div className="relative min-h-screen bg-gray-50">
@@ -88,7 +92,7 @@ const HomePage = () => {
                     Limited time offer: Book your dream vacation today and save up to 30%
                   </p>
                 </div>
-                <button className="bg-white cursor-pointer text-blue-800 hover:bg-blue-700 hover:text-white transition-all font-medium py-2 sm:py-3 px-4 sm:px-8 rounded-full flex items-center mx-auto text-sm sm:text-base">
+                <button onClick={()=>handleNavigate()} className="bg-white cursor-pointer text-blue-800 hover:bg-blue-700 hover:text-white transition-all font-medium py-2 sm:py-3 px-4 sm:px-8 rounded-full flex items-center mx-auto text-sm sm:text-base">
                   Book Now <FaArrowRight className="ml-2" />
                 </button>
               </div>
