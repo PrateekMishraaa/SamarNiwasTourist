@@ -30,7 +30,7 @@ const Contact = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:4000/api/contact", formData, {
+            const response = await axios.post("https://samar-niwasbackend.vercel.app/", formData, {
                 headers: { 'Content-Type': 'application/json' },
             });
 
