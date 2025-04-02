@@ -20,9 +20,9 @@ const Navbar = () => {
         {/* Logo Section */}
         <div className="flex items-center justify-center">
           <div className="bg-gray-800 px-4 py-2 rounded-lg shadow-lg">
-            <p className="font-extrabold text-xl sm:text-2xl md:text-3xl">
+            <a className="font-extrabold text-xl sm:text-2xl md:text-3xl" href='/'>
               Samar<span className="text-yellow-400">Niwas</span>
-            </p>
+            </a>
           </div>
         </div>
 
