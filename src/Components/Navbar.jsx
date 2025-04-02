@@ -101,10 +101,10 @@ const Navbar = () => {
       <div className='container mx-auto'>
         <ul className='flex flex-wrap justify-between px-4 md:px-10 py-4 font-bold font-serif text-sm md:text-base'>
           <li>
-            <a href="" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>Home</a>
+            <a href="/" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>Home</a>
           </li>
           <li>
-            <a href="" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>About Us</a>
+            <a href="/about-us" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>About Us</a>
           </li>
           <li>
             <a href="" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>Rooms</a>
