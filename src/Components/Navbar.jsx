@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaPhone, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
+import { FaHeadphones, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
+
 import { SiGmail } from "react-icons/si";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa6";
@@ -41,7 +42,7 @@ const Navbar = () => {
         {/* Desktop Contact Info */}
         <div className="hidden lg:flex items-center space-x-6 ml-44">
           <a href="tel:+919971855186" className="flex items-center space-x-2 hover:text-blue-300 transition duration-300">
-            <FaPhone className="text-xl text-blue-500" />
+            <FaHeadphones className="text-xl text-blue-500" />
             <span className="font-bold font-serif">+91-9971855186</span>
           </a>
 
@@ -70,7 +71,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           {/* Mobile Contact Info */}
           <a href="tel:+919971855186" className="flex items-center space-x-2 hover:bg-gray-700 p-2 rounded">
-            <FaPhone className="text-xl text-blue-500" />
+            <FaHeadphones className="text-xl text-blue-500" />
             <span className="font-bold font-serif">+91-9971855186</span>
           </a>
 
