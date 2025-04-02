@@ -107,7 +107,7 @@ const Navbar = () => {
             <a href="/about-us" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>About Us</a>
           </li>
           <li>
-            <a href="" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>Rooms</a>
+            <a href="/rooms" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>Rooms</a>
           </li>
           <li>
             <a href="" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>Gallery</a>
@@ -122,7 +122,7 @@ const Navbar = () => {
             <a href="" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300'>Contact</a>
           </li>
           <li>
-            <a href="" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300 bg-red-700 text-white rounded-xl'>Book Now</a>
+            <a href="/contact" className='block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300 bg-red-700 text-white rounded-xl'>Book Now</a>
           </li>
         </ul>
       </div>
