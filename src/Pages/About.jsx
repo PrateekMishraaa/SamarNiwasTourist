@@ -10,6 +10,13 @@ import Resort3 from "../assets/resort3.webp";
 import Footer from '../Components/Footer';
 
 const About = () => {
+    const stats = [
+        { value: "712", label: "Happy Guests" },
+        { value: "254", label: "Return Guests" },
+        { value: "689", label: "Five Stars Rating" },
+        { value: "782", label: "Served Breakfast" },
+      ];
+    
     const services = [
         { title: "Customer Satisfaction", icon: "⭐", color: "text-red-600"  },
         { title: "Free Wifi", icon: "📶", color: "text-red-600" },
@@ -87,6 +94,40 @@ const About = () => {
             <h3 className="mt-4 text-lg font-semibold text-center">{service.title}</h3>
           </div>
         ))}
+      </div>
+    </div>
+    <div className="w-full bg-gray-100">
+      {/* Virtual Tour Section */}
+      <div className="relative w-full h-[300px] md:h-[400px] bg-cover bg-center bg-gray-900" style={{ backgroundImage: "url('/path-to-hotel-image.jpg')" }}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+          <div className="bg-white p-4 rounded-full mb-4">
+            <span className="text-4xl text-red-900">▶</span>
+          </div>
+          <h2 className="text-lg md:text-xl font-semibold text-yellow-400">VIRTUAL TOUR</h2>
+          <h1 className="text-2xl md:text-3xl font-bold">OF HOTEL AROMA NAINITAL</h1>
+        </div>
+      </div>
+
+      {/* Statistics Section */}
+      <div className="bg-white shadow-lg rounded-lg mx-4 md:mx-auto md:w-4/5 py-6 px-4 md:px-8 flex flex-wrap justify-around text-center mt-[-50px] relative">
+        {stats.map((stat, index) => (
+          <div key={index} className="w-1/2 sm:w-1/4 py-4">
+            <span className="text-3xl font-bold text-red-600">{stat.value}</span>
+            <p className="text-gray-600 text-xl font-bold uppercase">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Testimonial Section */}
+      <div className="flex justify-center mt-8 px-4">
+        <div className="bg-red-600 text-white p-6 rounded-lg max-w-2xl">
+          <span className="text-3xl">❝</span>
+          <p className="text-sm md:text-base mt-2">
+            I was visiting Nainital with my family. We had a pet with us, and the hotel was
+            considerate to accommodate all of us. The hotel staff was very curious and polite.
+            The hotel has a lot of open space and is surrounded by greenery. I would highly recommend it!
+          </p>
+        </div>
       </div>
     </div>
       </section>
