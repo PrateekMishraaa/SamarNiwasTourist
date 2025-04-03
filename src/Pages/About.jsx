@@ -131,7 +131,9 @@ const About = () => {
       </div>
     </div>
       </section>
-      <Footer/>
+     <div className='mt-4'>
+     <Footer/>
+     </div>
     </>
   );
 }
