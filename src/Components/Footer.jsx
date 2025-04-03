@@ -1,20 +1,20 @@
 import React from 'react';
-import { FaLocationDot,  FaClock, FaFacebookF, FaYoutube } from 'react-icons/fa6';
+import { FaLocationDot, FaClock, FaFacebookF, FaYoutube } from 'react-icons/fa6';
 import { SiGmail } from 'react-icons/si';
 import { BsInstagram } from 'react-icons/bs';
 import { FaPhoneAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-900 text-white px-6 py-8 md:px-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+    <footer className="w-full bg-gray-900 text-white px-6 py-10 md:px-14 lg:px-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
         
         {/* Contact Info */}
         <div>
           <ul className="space-y-4">
             <li className="flex items-center space-x-2">
-              <FaLocationDot className="text-xl text-red-600" />
-              <span className="text-lg font-semibold text-blue-400">456 Heritage Road, Dehradun, India </span>
+              {/* <FaLocationDot className="text-2xl text-red-600" /> */}
+              <span className="text-lg font-semibold text-blue-400">Samar Niwas Home Stay, Rajpur Rd, Chander Lok Colony, Near Ajanta Hotel, Dehradun, Uttarakhand 248001</span>
             </li>
             <li className="flex items-center space-x-2">
               <FaPhoneAlt className="text-xl text-red-600" />
@@ -87,10 +87,15 @@ const Footer = () => {
 
       </div>
 
-    <div className='h-10 w-full   flex justify-between p-10'>
-      <a className='text-sm font-semibold font-serif' href=''>Managed By <span className='text-yellow-600'>Royal Collection Hotels</span></a>
-      <a href="" className='text-sm font-semibold font-serif '>All Rights Reserved - <span>Samar- <span className='text-yellow-600'>Niwas</span></span><span className='text-red-600'>@2025</span></a>
-    </div>
+      {/* Footer Bottom Section */}
+      <div className="flex flex-col md:flex-row justify-between items-center mt-10 border-t border-gray-700 pt-4">
+        <a className="text-sm font-semibold font-serif" href="#">
+          Managed By <span className="text-yellow-600">Royal Collection Hotels</span>
+        </a>
+        <a href="#" className="text-sm font-semibold font-serif">
+          All Rights Reserved - <span>Samar- <span className="text-yellow-600">Niwas</span></span><span className="text-red-600">@2025</span>
+        </a>
+      </div>
     </footer>
   );
 };
