@@ -38,7 +38,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/all-prices");
+        const response = await axios.get("https://samarniwasbackend.onrender.com/");
         setData(response.data);
         console.log(response.data);
       } catch (error) {
