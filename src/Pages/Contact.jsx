@@ -31,7 +31,7 @@ const Contact = () => {
 
         try {
             const response = await axios.post(
-                "https://samarniwasbackend.onrender.com/api/contact",
+                "http://localhost:4000/api/contact",
                 formData,
                 { headers: { "Content-Type": "application/json" } }
             );
@@ -153,6 +153,7 @@ const Contact = () => {
             <ToastContainer />
         </>
     );
+    
 };
 
 export default Contact;
