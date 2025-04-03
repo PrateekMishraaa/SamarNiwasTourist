@@ -14,7 +14,7 @@ const Footer = () => {
           <ul className="space-y-4">
             <li className="flex items-center space-x-2">
               <FaLocationDot className="text-xl text-red-600" />
-              <span className="text-lg font-semibold text-blue-400">Samar Niwas</span>
+              <span className="text-lg font-semibold text-blue-400">456 Heritage Road, Dehradun, India </span>
             </li>
             <li className="flex items-center space-x-2">
               <FaPhoneAlt className="text-xl text-red-600" />

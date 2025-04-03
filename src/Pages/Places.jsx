@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import Home from "../assets/samarniwas.jpeg"
 
 const places = [
   {
@@ -66,7 +67,7 @@ const Places = () => {
               className='bg-white rounded-4xl shadow-lg overflow-hidden bg-shadow-dark'
             >
               <img
-                src={place.image}
+                src={Home}
                 alt={place.title}
                 className='w-full h-56 object-cover '
               />

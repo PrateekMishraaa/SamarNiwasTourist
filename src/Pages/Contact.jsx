@@ -103,7 +103,7 @@ const Contact = () => {
                     </p>
                     <p className='mt-4 flex items-center text-xl '><BiLogoGmail className='mr-2 text-red-600'/><strong>Email: <span className='text-red-700'>booking@rchronline.com</span></strong></p>
                     <p className='mt-4 flex items-center text-xl '><FaHeadphones className='mr-2 text-blue-600'/><strong>Phone-No: <span className='text-red-700'>+91-9971855186</span></strong></p>
-                    <p className='mt-4 flex items-center text-xl '><FaLocationDot className='mr-2 text-red-900'/><strong>Address: <span className='text-red-700'>Dummy Address</span></strong></p>
+                    <p className='mt-4 flex items-center text-xl '><FaLocationDot className='mr-2 text-red-900'/><strong>Address: <span className='text-red-700'>456 Heritage Road, Dehradun, India </span></strong></p>
                 </div>
             </section>
             <Footer />

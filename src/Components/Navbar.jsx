@@ -57,14 +57,32 @@ const Navbar = () => {
               <a href="#" className="hover:opacity-75 transition duration-300"><FaFacebookF className="text-blue-700 text-xl" /></a>
               <a href="#" className="hover:opacity-75 transition duration-300"><FaYoutube className="text-red-700 text-2xl" /></a>
             </div>
+
+            {/* Mobile Navigation Links */}
+            <ul className='flex flex-col space-y-2 text-center mt-4 font-bold font-serif text-sm md:text-base'>
+              {[
+                { href: '/', text: 'Home' },
+                { href: '/about-us', text: 'About Us' },
+                { href: '/rooms', text: 'Rooms' },
+                { href: '/gallery', text: 'Gallery' },
+                { href: '/places-to-visit', text: 'Places To Visit' },
+                { href: '/payment', text: 'Payment' },
+                { href: '/contact', text: 'Contact' },
+                { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
+              ].map(({ href, text, className }) => (
+                <li key={href} className="py-1">
+                  <a href={href} className={`block px-4 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300 ${className}`}>{text}</a>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </nav>
 
-      {/* Navigation Menu */}
-      <div className='w-full shadow-md bg-white'>
+      {/* Desktop Navigation Menu */}
+      <div className='hidden lg:block w-full shadow-md bg-white'>
         <div className='container mx-auto'>
-          <ul className='flex flex-wrap justify-center md:justify-between px-4 md:px-10 py-4 font-bold font-serif text-sm md:text-base'>
+          <ul className='flex justify-center md:justify-between px-4 md:px-10 py-4 font-bold font-serif text-sm md:text-base'>
             {[
               { href: '/', text: 'Home' },
               { href: '/about-us', text: 'About Us' },
@@ -73,7 +91,7 @@ const Navbar = () => {
               { href: '/places-to-visit', text: 'Places To Visit' },
               { href: '/payment', text: 'Payment' },
               { href: '/contact', text: 'Contact' },
-              { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl' }
+              { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
             ].map(({ href, text, className }) => (
               <li key={href} className="px-2 py-1">
                 <a href={href} className={`block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300 ${className}`}>{text}</a>
