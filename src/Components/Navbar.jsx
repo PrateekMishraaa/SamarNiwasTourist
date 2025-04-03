@@ -70,10 +70,10 @@ const Navbar = () => {
               { href: '/about-us', text: 'About Us' },
               { href: '/rooms', text: 'Rooms' },
               { href: '/gallery', text: 'Gallery' },
-              { href: '/places', text: 'Places To Visit' },
+              { href: '/places-to-visit', text: 'Places To Visit' },
               { href: '/payment', text: 'Payment' },
               { href: '/contact', text: 'Contact' },
-              { href: '/book-now', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl' }
+              { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl' }
             ].map(({ href, text, className }) => (
               <li key={href} className="px-2 py-1">
                 <a href={href} className={`block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300 ${className}`}>{text}</a>
