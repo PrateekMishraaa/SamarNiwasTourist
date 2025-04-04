@@ -7,8 +7,9 @@ import Footer from "../Components/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
-
+import {useNavigate} from "react-router-dom"
 const Contact = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         FullName: "",
         Email: "",
@@ -39,6 +40,7 @@ const Contact = () => {
 
             toast.success("Message sent successfully!");
             console.log("Message sent successfully", response.data);
+            navigate("/")
 
             // Clear form after successful submission
             setFormData({
