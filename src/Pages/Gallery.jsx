@@ -8,11 +8,17 @@ import RoomFive from "../assets/room5.webp";
 import RoomSix from "../assets/room6.webp";
 import RoomSeven from "../assets/room7.webp";
 import RoomEight from "../assets/room8.webp";
+import RoomNine from "../assets/room9.jpeg";
+import RoomTen from "../assets/room10.jpeg";
+import RoomEleven from "../assets/room11.jpeg";
+import RoomTwelve from "../assets/room12.jpeg";
+import RoomThirteen from "../assets/room13.jpeg";
+
 import Footer from "../Components/Footer";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const images = [RoomOne, RoomTwo, RoomThree, RoomFour, RoomFive, RoomSix, RoomSeven, RoomEight];
+  const images = [RoomOne, RoomTwo, RoomThree, RoomFour, RoomFive, RoomSix, RoomSeven, RoomEight,RoomNine,RoomTen,RoomEleven,RoomTwelve,RoomThirteen];
 
   return (
     <>

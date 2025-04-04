@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 import { FaHeadphones, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import { useRef,useEffect } from 'react';
+import gsap from "gsap"
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa6";
-
+import Logo from "../assets/removebg-logo.png"
 const Navbar = () => {
+  const boxRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(()=>{
+    
+  })
+
   return (
     <>
       <nav className="bg-gray-900 text-white w-full">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo Section */}
-          <div className="bg-gray-800 px-4 py-2 rounded-lg shadow-lg">
-            <a className="font-extrabold text-xl sm:text-2xl md:text-3xl" href='/'>
-              Samar<span className="text-yellow-400">Niwas</span>
-            </a>
-          </div>
+          <div className="relative">
+  <a href="/">
+  <img src={Logo} alt="Logo" className="h-20 -mt-4" />
+  </a>
+</div>
+
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">

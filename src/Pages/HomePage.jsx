@@ -2,18 +2,133 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import Nature from "../assets/Newnature.jpeg";
+import Nature from "../assets/Sliderr.jpeg";
 import Room from "../assets/room.webp";
 import { FaArrowRight, FaConciergeBell, FaParking, FaServer, FaTree, FaUserMd, FaUserShield, FaUtensils, FaVideo, FaWifi } from 'react-icons/fa';
 import RoomOne from "../assets/room.webp";
 import RoomTwo from "../assets/room2.webp";
+import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import RoomThree from "../assets/room3.webp";
 import RoomFour from "../assets/room4.webp";
 import Footer from '../Components/Footer';
+// import axios from "axios"
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-
+import Roomone from "../assets/room14.jpeg"
+import Roomtwo from "../assets/room15.jpeg"
+import Roomthree from "../assets/room15.jpeg"
 const HomePage = () => {
+  const [dataa,setDataa] = useState([]);
+  const [error,setError] = useState(false)
+
+const testimonials = [
+  {
+    name: "Amit Sharma",
+    location: "Delhi, India",
+    rating: 5,
+    review: "My stay at Samar Niwas Home Stay was amazing! The staff was friendly, the rooms were clean, and the service was excellent. Highly recommended!",
+  },
+  {
+    name: "Priya Verma",
+    location: "Mumbai, India",
+    rating: 4.5,
+    review: "Beautiful place with a peaceful atmosphere. The food was great, and the location was perfect for a relaxing vacation.",
+  },
+  {
+    name: "Rahul Khanna",
+    location: "Bangalore, India",
+    rating: 5,
+    review: "A wonderful experience! The hospitality was top-notch, and I really appreciated the quick response from the support team.",
+  },
+  {
+    name: "Neha Singh",
+    location: "Pune, India",
+    rating: 4.8,
+    review: "Loved the place! The staff was super helpful, and the rooms were well maintained. Will definitely visit again.",
+  },
+  {
+    name: "Arjun Kapoor",
+    location: "Jaipur, India",
+    rating: 5,
+    review: "One of the best experiences I’ve had. The location is great, the rooms are spacious, and the customer service is excellent.",
+  },
+];
+const blogs = [
+  {
+    id: 1,
+    title: "Top 5 Places to Visit in Dehradun",
+    description:
+      "Explore the beauty of Dehradun with our list of the top five must-visit places near Samar Niwas.",
+    image: Roomone,  // Using local image
+    date: "March 15, 2025",
+    author: "Samar Niwas Team",
+  },
+  {
+    id: 2,
+    title: "Why Samar Niwas is the Best Homestay in Dehradun",
+    description:
+      "Discover what makes Samar Niwas a top choice for travelers looking for comfort and hospitality.",
+    image: Roomtwo,  // Using local image
+    date: "April 10, 2025",
+    author: "Guest Reviews",
+  },
+  {
+    id: 3,
+    title: "A Weekend Escape: Things to Do Near Samar Niwas",
+    description:
+      "Plan your perfect weekend with trekking, local food, and sightseeing near our homestay.",
+    image: Roomthree,  // Using local image
+    date: "May 5, 2025",
+    author: "Travel Blogger",
+  },
+];
+const offers = [
+  {
+    id: 1,
+    title: "Deluxe Room - 20% Off",
+    description: "Enjoy a luxurious stay with complimentary breakfast and WiFi.",
+    image: RoomOne,
+    price: "₹3,999/night",
+    discount: "₹3,199/night",
+  },
+  {
+    id: 2,
+    title: "Couple Suite - 25% Off",
+    description: "Experience a romantic stay with special arrangements.",
+    image: RoomTwo,
+    price: "₹5,499/night",
+    discount: "₹4,124/night",
+  },
+  {
+    id: 3,
+    title: "Family Suite - 30% Off",
+    description: "Spacious rooms with extra beds for a perfect family getaway.",
+    image: RoomThree,
+    price: "₹6,999/night",
+    discount: "₹4,899/night",
+  },
+];
+
+useEffect(()=>{
+      const fetchData = async()=>{
+        try{
+            const response = await axios.get("http://localhost:4000/api/allRoom")
+            console.log(response.data)
+        }catch(error){
+          setError(true)
+        }
+      }
+      fetchData()
+},[])
+const [currentIndex, setCurrentIndex] = useState(0);
+
+const prevTestimonial = () => {
+  setCurrentIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+};
+
+const nextTestimonial = () => {
+  setCurrentIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+};
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
@@ -307,7 +422,100 @@ const HomePage = () => {
             </div>
           )}
         </section>
+        <section className="py-12 px-4 md:px-12 bg-gray-100">
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-bold font-serif text-gray-900">
+          Latest <span className="text-red-600">Blogs</span>
+        </h2>
+        <p className="text-gray-600 mt-2">
+          Discover travel tips, local attractions, and guest stories from Samar Niwas.
+        </p>
+      </div>
 
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {blogs.map((blog) => (
+          <div
+            key={blog.id}
+            className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300"
+          >
+            <img src={blog.image} alt={blog.title} className="w-full h-56 object-cover" />
+            <div className="p-5">
+              <h3 className="text-xl font-semibold text-gray-800">{blog.title}</h3>
+              <p className="text-gray-600 mt-2 text-sm">{blog.description}</p>
+              <div className="flex items-center justify-between mt-4 text-gray-500 text-sm">
+                <p>{blog.date}</p>
+                <p className="font-semibold">{blog.author}</p>
+              </div>
+              <button className="mt-4 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+                Read More
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+    <section className="py-12 px-4 md:px-12 bg-gray-100">
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-bold font-serif text-gray-900">
+          Featured <span className="text-red-600">Offers</span>
+        </h2>
+        <p className="text-gray-600 mt-2">
+          Book now and enjoy special discounts at Samar Niwas Dehradun.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {offers.map((offer) => (
+          <div
+            key={offer.id}
+            className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300"
+          >
+            <img src={offer.image} alt={offer.title} className="w-full h-56 object-cover" />
+            <div className="p-5">
+              <h3 className="text-xl font-semibold text-gray-800">{offer.title}</h3>
+              <p className="text-gray-600 mt-2 text-sm">{offer.description}</p>
+              <div className="flex items-center justify-between mt-4">
+                <p className="text-gray-400 line-through">{offer.price}</p>
+                <p className="text-red-600 font-semibold">{offer.discount}</p>
+              </div>
+              <button className="mt-4 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+                Book Now
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+        <section className="bg-gray-100 py-10 px-4 text-center">
+      <h2 className="text-3xl font-bold text-gray-800 mb-6">What Our Customers Say</h2>
+      <div className="max-w-2xl mx-auto bg-white shadow-lg p-6 rounded-lg relative">
+        <p className="text-lg text-gray-700 italic">"{testimonials[currentIndex].review}"</p>
+        <div className="mt-4">
+          {[...Array(5)].map((_, index) => (
+            <FaStar
+              key={index}
+              className={`inline text-yellow-500 ${index < testimonials[currentIndex].rating ? "" : "opacity-30"}`}
+            />
+          ))}
+        </div>
+        <h4 className="text-lg font-semibold mt-2">{testimonials[currentIndex].name}</h4>
+        <p className="text-gray-600 text-sm">{testimonials[currentIndex].location}</p>
+
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevTestimonial}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-700 bg-gray-200 hover:bg-gray-300 p-2 rounded-full"
+        >
+          <FaChevronLeft size={20} />
+        </button>
+        <button
+          onClick={nextTestimonial}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-700 bg-gray-200 hover:bg-gray-300 p-2 rounded-full"
+        >
+          <FaChevronRight size={20} />
+        </button>
+      </div>
+    </section>
         <Footer/>
       </div>
     </>
