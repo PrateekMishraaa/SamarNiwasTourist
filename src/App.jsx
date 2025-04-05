@@ -7,6 +7,7 @@ import Rooms from './Pages/Rooms'
 import Gallery from './Pages/Gallery'
 import Places from './Pages/Places'
 import Payment from './Pages/Payment'
+import PageNotFound from './Pages/PageNotFound'
 const App = () => {
   return (
     <>
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/gallery' element={<Gallery/>}/>
         <Route path="/places-to-visit" element={<Places/>}/>
         <Route path="/payment" element={<Payment/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
       </Routes>
     </Router>
     </>
