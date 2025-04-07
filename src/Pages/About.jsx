@@ -4,10 +4,9 @@ import Navbar from '../Components/Navbar';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Room from "../assets/room.webp";
-import Resort1 from "../assets/resort.webp";
-import Resort2 from "../assets/resort2.webp";
-import Resort3 from "../assets/resort3.webp";
+// import SamarNiwas from "../assets/newsamarniwas.jpeg"
 import Footer from '../Components/Footer';
+// import NewImage from "../assets/newimage.jpeg"
 
 const About = () => {
   const stats = [
@@ -120,7 +119,7 @@ const About = () => {
 
 
       {/* Why Choose Us */}
-      <section className="w-full bg-gray-100 py-10">
+      {/* <section className="w-full bg-gray-100 py-10">
         <div className="text-center mb-10 px-4">
           <p className="text-3xl font-semibold font-serif">Why Choose Our <span className="text-red-500">Resort</span></p>
           <p className="text-lg font-semibold">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
@@ -129,18 +128,18 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <Slider {...settings}>
               <div>
-                <img src={Resort1} alt="Resort 1" className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-xl" />
+                <img src={NewImage} alt="Resort 1" className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-xl" />
               </div>
               <div>
-                <img src={Resort2} alt="Resort 2" className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-xl" />
+                <img src={SamarNiwas} alt="Resort 2" className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-xl" />
               </div>
               <div>
-                <img src={Resort3} alt="Resort 3" className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-xl" />
+                <img src={NewImage} alt="Resort 3" className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-xl" />
               </div>
             </Slider>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services */}
       <section className="w-full bg-gray-100 py-10 flex justify-center items-center px-4">
