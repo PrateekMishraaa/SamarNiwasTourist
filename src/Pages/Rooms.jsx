@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import RoomOnee from "../assets/room6.webp";
-import RoomOne from "../assets/room.webp";
-import SuperDeluxe from "../assets/superdeluxe.avif";
+import RoomOnee from "../assets/samarroom.jpeg";
+import RoomOne from "../assets/samarroom2.jpeg";
+import SuperDeluxe from "../assets/samarroom3.jpeg";
 import {
   FaConciergeBell,
   FaParking,
