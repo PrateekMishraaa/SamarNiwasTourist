@@ -149,7 +149,7 @@ const Rooms = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="bg-red-600 py-12 text-white text-center">
+      <section className="bg-black py-12 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Book Your Stay?</h2>
         <p className="mb-6">Comfort, convenience, and luxury await you. Reserve your room now!</p>
         <a href="/contact" className="bg-white text-red-600 font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition">

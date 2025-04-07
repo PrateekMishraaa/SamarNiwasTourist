@@ -463,38 +463,50 @@ const nextTestimonial = () => {
         ))}
       </div>
     </section>
-    <section className="py-12 px-4 md:px-12 bg-gray-100">
-      <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold font-serif text-gray-900">
-          Featured <span className="text-red-600">Offers</span>
-        </h2>
-        <p className="text-gray-600 mt-2">
-          Book now and enjoy special discounts at Samar Niwas Dehradun.
-        </p>
-      </div>
+    <section className="py-12 px-4 sm:px-6 md:px-12 bg-gray-100">
+  <div className="text-center mb-10">
+    <h2 className="text-3xl sm:text-4xl font-bold font-serif text-gray-900">
+      Featured <span className="text-red-600">Offers</span>
+    </h2>
+    <p className="text-gray-600 mt-2 text-sm sm:text-base">
+      Book now and enjoy special discounts at Samar Niwas Dehradun.
+    </p>
+  </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {offers.map((offer) => (
-          <div
-            key={offer.id}
-            className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300"
-          >
-            <img src={offer.image} alt={offer.title} className="w-full h-56 object-cover" />
-            <div className="p-5">
-              <h3 className="text-xl font-semibold text-gray-800">{offer.title}</h3>
-              <p className="text-gray-600 mt-2 text-sm">{offer.description}</p>
-              <div className="flex items-center justify-between mt-4">
-                <p className="text-gray-400 line-through">{offer.price}</p>
-                <p className="text-red-600 font-semibold">{offer.discount}</p>
-              </div>
-              <a href='/contact' className="mt-4 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
-                Book Now
-              </a>
-            </div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {offers.map((offer) => (
+      <div
+        key={offer.id}
+        className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300"
+      >
+        <img
+          src={offer.image}
+          alt={offer.title}
+          className="w-full h-48 sm:h-56 md:h-60 object-cover"
+        />
+        <div className="p-4 sm:p-5">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-800">
+            {offer.title}
+          </h3>
+          <p className="text-gray-600 mt-2 text-sm sm:text-base">{offer.description}</p>
+
+          <div className="flex items-center justify-between mt-4">
+            <p className="text-gray-400 line-through text-sm sm:text-base">{offer.price}</p>
+            <p className="text-red-600 font-semibold text-sm sm:text-base">{offer.discount}</p>
           </div>
-        ))}
+
+          <a
+            href="/contact"
+            className="mt-4 block w-full text-center bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition"
+          >
+            Book Now
+          </a>
+        </div>
       </div>
-    </section>
+    ))}
+  </div>
+</section>
+
         <section className="bg-gray-100 py-10 px-4 text-center">
       <h2 className="text-3xl font-bold text-gray-800 mb-6">What Our Customers Say</h2>
       <div className="max-w-2xl mx-auto bg-white shadow-lg p-6 rounded-lg relative">
