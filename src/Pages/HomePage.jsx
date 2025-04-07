@@ -5,10 +5,10 @@ import { Carousel } from 'react-responsive-carousel';
 import Nature from "../assets/Sliderr.jpeg";
 import Room from "../assets/room.webp";
 import { FaArrowRight, FaConciergeBell, FaParking, FaServer, FaTree, FaUserMd, FaUserShield, FaUtensils, FaVideo, FaWifi } from 'react-icons/fa';
-import RoomOne from "../assets/room.webp";
-import RoomTwo from "../assets/room2.webp";
+import RoomOne from "../assets/latest3.jpeg";
+import RoomTwo from "../assets/latest2.jpeg";
 import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import RoomThree from "../assets/room3.webp";
+import RoomThree from "../assets/latest1.jpeg";
 import RoomFour from "../assets/room4.webp";
 import Footer from '../Components/Footer';
 // import axios from "axios"
@@ -16,9 +16,9 @@ import Slider from "../assets/slider2.jpeg"
 import Slider3 from "../assets/slider3.jpeg"
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import Roomone from "../assets/room14.jpeg"
-import Roomtwo from "../assets/room15.jpeg"
-import Roomthree from "../assets/room15.jpeg"
+import Roomone from "../assets/samarroom.jpeg"
+import Roomtwo from "../assets/samarroom2.jpeg"
+import Roomthree from "../assets/samarroom3.jpeg"
 const HomePage = () => {
   const [dataa,setDataa] = useState([]);
   const [error,setError] = useState(false)
@@ -382,50 +382,55 @@ const nextTestimonial = () => {
 
         {/* Gallery Section */}
         <section className="py-12 bg-gray-100">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold text-center mb-8 font-serif text-red-500">
-              <span className="text-black">Our</span> Gallery
-            </h2>
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-semibold text-center mb-8 font-serif text-red-500">
+      <span className="text-black">Our</span> Gallery
+    </h2>
 
-            {/* Responsive Grid Layout */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {images.map((image, index) => (
-                <div
-                  key={index}
-                  className="overflow-hidden rounded-lg shadow-md transform transition duration-300 hover:scale-105 cursor-pointer"
-                  onClick={() => setSelectedImage(image)}
-                >
-                  <img
-                    src={image}
-                    alt={`Gallery Image ${index + 1}`}
-                    className="w-full h-auto object-cover rounded-lg"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+    {/* Responsive Grid Layout */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className="overflow-hidden rounded-lg shadow-md transform transition duration-300 hover:scale-105 cursor-pointer"
+          onClick={() => setSelectedImage(image)}
+        >
+          <img
+            src={image}
+            alt={`Gallery Image ${index + 1}`}
+            className="w-full h-60 object-cover rounded-lg sm:h-64 md:h-72 lg:h-80"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
 
-          {/* Image Modal */}
-          {selectedImage && (
-            <div
-              className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-              onClick={() => setSelectedImage(null)}
-            >
-              <div className="relative">
-                <button
-                  className="absolute top-2 right-2 bg-white text-black p-2 rounded-full"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setSelectedImage(null);
-                  }}
-                >
-                  ✖
-                </button>
-                <img src={selectedImage} alt="Expanded View" className="max-w-full max-h-screen rounded-lg" />
-              </div>
-            </div>
-          )}
-        </section>
+  {/* Image Modal */}
+  {selectedImage && (
+    <div
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+      onClick={() => setSelectedImage(null)}
+    >
+      <div className="relative max-w-full max-h-full overflow-auto rounded-lg">
+        <button
+          className="absolute top-2 right-2 bg-white text-black p-3 rounded-full text-lg hover:bg-gray-200 z-10"
+          onClick={(e) => {
+            e.stopPropagation();
+            setSelectedImage(null);
+          }}
+        >
+          ✖
+        </button>
+        <img
+          src={selectedImage}
+          alt="Expanded View"
+          className="max-w-full max-h-[90vh] object-contain rounded-lg"
+        />
+      </div>
+    </div>
+  )}
+</section>
+
         <section className="py-12 px-4 md:px-12 bg-gray-100">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold font-serif text-gray-900">

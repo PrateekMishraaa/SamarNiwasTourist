@@ -3,11 +3,16 @@ import Slider from 'react-slick';
 import Navbar from '../Components/Navbar';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { RiCustomerService2Fill } from "react-icons/ri";
 import Room from "../assets/room.webp";
+import { GiThunderSkull,GiTyre  } from "react-icons/gi";
 // import SamarNiwas from "../assets/newsamarniwas.jpeg"
+import { FaWifi } from "react-icons/fa";
 import Footer from '../Components/Footer';
+import { MdCleaningServices } from "react-icons/md";
 // import NewImage from "../assets/newimage.jpeg"
-
+import { BiFoodTag } from "react-icons/bi";
+import { BsLightningCharge } from "react-icons/bs";
 const About = () => {
   const stats = [
     { value: "712", label: "Happy Guests" },
@@ -17,14 +22,14 @@ const About = () => {
   ];
 
   const services = [
-    { title: "Customer Satisfaction", icon: "⭐", color: "text-red-600" },
-    { title: "Free Wifi", icon: "📶", color: "text-red-600" },
-    { title: "Power Backup", icon: "⚡", color: "text-red-600" },
-    { title: "Delicious Breakfast", icon: "☕", color: "text-red-600" },
-    { title: "EV Charger", icon: "🔌", color: "text-red-600" },
-    { title: "Good Parking & Security", icon: "🚗", color: "text-red-600" },
-    { title: "Clean Room Service", icon: "🛏️", color: "text-red-600" },
-    { title: "Games Room", icon: "🎮", color: "text-red-600" },
+    { title: "Customer Satisfaction", icon: <RiCustomerService2Fill className='text-gray-600' />, color: "text-red-600" },
+    { title: "Free Wifi", icon: <FaWifi className='text-green-600'/>, color: "text-red-600" },
+    { title: "Power Backup", icon: <GiThunderSkull/>, color: "text-red-600" },
+    { title: "Delicious Breakfast", icon: <BiFoodTag className='text-green-400'/>, color: "text-red-600" },
+    { title: "EV Charger", icon: <BsLightningCharge className='text-slate-900'/>, color: "text-red-600" },
+    { title: "Good Parking & Security", icon: <GiTyre className='text-black' />, color: "text-red-600" },
+    { title: "Clean Room Service", icon: <MdCleaningServices className='text-[#895129]'/>, color: "text-red-600" },
+    // { title: "Games Room", icon: "🎮", color: "text-red-600" },
   ];
 
   const testimonials = [
@@ -160,7 +165,7 @@ const About = () => {
             <span className="text-4xl text-red-900">▶</span>
           </div>
           <h2 className="text-lg md:text-xl font-semibold text-yellow-400">VIRTUAL TOUR</h2>
-          <h1 className="text-2xl md:text-3xl font-bold">OF HOTEL AROMA NAINITAL</h1>
+          <h1 className="text-2xl md:text-3xl font-bold">OF HOTEL SAMAR NIWAS</h1>
         </div>
       </section>
 
