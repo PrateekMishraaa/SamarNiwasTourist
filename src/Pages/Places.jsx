@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import Snow from "../assets/snow.jpeg";
@@ -6,7 +7,7 @@ import Snow2 from "../assets/snow2.jpeg";
 import Snow3 from "../assets/snow3.jpeg";
 import Snow4 from "../assets/snow4.jpeg";
 import Snow5 from "../assets/snow5.jpeg";
-import HeroBanner from "../assets/logo.png"; // Add a scenic hero image here
+import HeroBanner from "../assets/logo.png";
 
 const places = [
   {
@@ -49,8 +50,22 @@ const Places = () => {
       {/* Hero Banner */}
       <div className="w-full h-[60vh] bg-cover bg-center" style={{ backgroundImage: `url(${HeroBanner})` }}>
         <div className="w-full h-full bg-black/40 flex flex-col justify-center items-center text-white text-center px-4">
-          {/* <h1 className="text-4xl md:text-5xl font-bold font-serif">Discover the Magic of Nainital</h1>
-          <p className="mt-4 text-lg md:text-xl">Nature, Peace, and Adventure await you</p> */}
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold font-serif"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            {/* Discover the Magic of Nainital */}
+          </motion.h1>
+          <motion.p
+            className="mt-4 text-lg md:text-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            {/* Nature, Peace, and Adventure await you */}
+          </motion.p>
         </div>
       </div>
 
@@ -64,9 +79,13 @@ const Places = () => {
 
         <div className='w-[90%] md:w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
           {places.map((place, index) => (
-            <div
+            <motion.div
               key={index}
               className='bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300'
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <img
                 src={place.image}
@@ -79,20 +98,26 @@ const Places = () => {
                 </h3>
                 <p className='text-gray-600 mt-3'>{place.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Fun Facts Section */}
-      <section className='bg-white py-14 px-4 text-center'>
+      <motion.section
+        className='bg-white py-14 px-4 text-center'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+      >
         <h3 className='text-2xl md:text-3xl font-bold font-serif mb-6 text-gray-800'>Did You Know?</h3>
         <div className='max-w-3xl mx-auto text-gray-700 space-y-4 text-lg'>
           <p>🌄 Nainital was founded in 1841 by a British sugar trader named P. Barron.</p>
           <p>🌊 The town is named after the Naini Lake, which is shaped like an eye.</p>
           <p>🏞 The region is home to several endangered Himalayan species.</p>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </>

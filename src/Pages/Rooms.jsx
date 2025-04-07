@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import RoomOnee from "../assets/samarroom.jpeg";
@@ -16,10 +17,22 @@ import {
   FaWifi,
 } from "react-icons/fa";
 
+// Animation Variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 // RoomCard Component
 const RoomCard = ({ image, title, description, price }) => {
   return (
-    <div className="bg-white shadow-lg rounded-2xl overflow-hidden max-w-sm hover:scale-105 transition-transform duration-300">
+    <motion.div
+      className="bg-white shadow-lg rounded-2xl overflow-hidden max-w-sm hover:scale-105 transition-transform duration-300"
+      initial="hidden"
+      whileInView="visible"
+      variants={fadeInUp}
+      viewport={{ once: true }}
+    >
       <img src={image} alt={title} className="w-full h-52 object-cover" />
       <div className="p-5">
         <h2 className="text-lg font-bold text-gray-900">{title}</h2>
@@ -33,7 +46,7 @@ const RoomCard = ({ image, title, description, price }) => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -94,20 +107,31 @@ const Rooms = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full bg-cover bg-center" style={{ backgroundImage: `url(${RoomOnee})` }}>
         <div className="absolute inset-0 bg-black opacity-50" />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4">
+        <motion.div
+          className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <h1 className="text-4xl font-bold mb-4">Experience Luxury Like Never Before</h1>
           <p className="text-lg font-medium">Book a room that suits your comfort and budget</p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Rooms Section */}
       <section className="bg-gray-100 py-12">
-        <div className="px-6 md:px-20 text-center">
+        <motion.div
+          className="px-6 md:px-20 text-center"
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInUp}
+          viewport={{ once: true }}
+        >
           <p className="text-3xl font-bold font-serif mb-2">
             Explore Our <span className="text-red-700 hover:text-yellow-600 transition">Rooms</span>
           </p>
           <p className="text-sm text-gray-600">Choose a room according to your budget</p>
-        </div>
+        </motion.div>
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
             {rooms.map((room, index) => (
@@ -125,10 +149,18 @@ const Rooms = () => {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-10 max-w-6xl mx-auto px-4">
           {services.map((service, index) => (
-            <div key={index} className="flex flex-col items-center p-6 bg-gray-50 shadow-md rounded-lg hover:shadow-xl transition-all duration-300">
+            <motion.div
+              key={index}
+              className="flex flex-col items-center p-6 bg-gray-50 shadow-md rounded-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
               {service.icon}
               <p className="mt-3 font-semibold text-center">{service.label}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -140,24 +172,36 @@ const Rooms = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
           {testimonials.map((testi, index) => (
-            <div key={index} className="bg-white shadow-lg rounded-xl p-6">
+            <motion.div
+              key={index}
+              className="bg-white shadow-lg rounded-xl p-6"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
               <p className="italic text-gray-600">"{testi.comment}"</p>
               <p className="text-right mt-4 font-semibold text-red-600">- {testi.name}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-black py-12 text-white text-center">
+      <motion.section
+        className="bg-black py-12 text-white text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-3xl font-bold mb-4">Ready to Book Your Stay?</h2>
         <p className="mb-6">Comfort, convenience, and luxury await you. Reserve your room now!</p>
         <a href="/contact" className="bg-white text-red-600 font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition">
           Book Now
         </a>
-      </section>
+      </motion.section>
 
-      {/* Footer */}
       <Footer />
     </>
   );

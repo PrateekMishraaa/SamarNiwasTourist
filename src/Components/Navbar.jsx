@@ -63,9 +63,9 @@ const Navbar = () => {
                 { href: '/rooms', text: 'Rooms' },
                 { href: '/gallery', text: 'Gallery' },
                 { href: '/places-to-visit', text: 'Places To Visit' },
-                { href: '/payment', text: 'Payment' },
+                // { href: '/payment', text: 'Payment' },
                 { href: '/contact', text: 'Contact' },
-                { href: '/signup', text: 'Signup' },
+                // { href: '/signup', text: 'Signup' },
                 { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
               ].map(({ href, text, className }) => (
                 <li key={href}>
