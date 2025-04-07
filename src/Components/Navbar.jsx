@@ -66,7 +66,7 @@ const Navbar = () => {
                 { href: '/payment', text: 'Payment' },
                 { href: '/contact', text: 'Contact' },
                 { href: '/signup', text: 'Signup' },
-                { href: '/book-now', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
+                { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
               ].map(({ href, text, className }) => (
                 <li key={href}>
                   <a href={href} className={`block px-4 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300 ${className || ''}`}>
@@ -90,7 +90,7 @@ const Navbar = () => {
               { href: '/gallery', text: 'Gallery' },
               { href: '/places-to-visit', text: 'Places To Visit' },
               { href: '/contact', text: 'Contact' },
-              { href: '/book-now', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
+              { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
             ].map(({ href, text, className }) => (
               <li key={href} className="px-2 py-1">
                 <a href={href} className={`block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300 ${className || ''}`}>

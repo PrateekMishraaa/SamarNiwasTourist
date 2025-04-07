@@ -12,6 +12,8 @@ import RoomThree from "../assets/room3.webp";
 import RoomFour from "../assets/room4.webp";
 import Footer from '../Components/Footer';
 // import axios from "axios"
+import Slider from "../assets/slider2.jpeg"
+import Slider3 from "../assets/slider3.jpeg"
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Roomone from "../assets/room14.jpeg"
@@ -212,7 +214,8 @@ const nextTestimonial = () => {
             )}
           >
             {/* Slide 1 */}
-            <div className='relative h-screen w-full'>
+            <div className='h-[100vh]'>
+            <div className='relative h-[80vh] w-full'>
               <img src={Nature} className='h-full w-full object-cover' alt="Beautiful vacation destination" />
               <div className="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-black/70 via-black/50 to-black/30 text-white p-2 sm:p-4">
                 <div className="max-w-4xl text-center px-2 sm:px-4">
@@ -227,10 +230,10 @@ const nextTestimonial = () => {
                 </div>
               </div>
             </div>
-            
+            </div>
             {/* Slide 2 */}
-            <div className='relative h-screen w-full bg-red-200'>
-              <img src={Nature} className='h-full w-full object-cover' alt="Luxury accommodation" />
+            <div className='relative h-[80vh] w-full bg-red-200'>
+              <img src={Slider} className='h-full w-full object-cover' alt="Luxury accommodation" />
               <div className="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-black/70 via-black/50 to-black/30 text-white p-2 sm:p-4">
                 <div className="max-w-4xl text-center px-3 sm:px-6 py-4 sm:py-10 bg-gradient-to-b from-white to-gray-100 rounded-2xl sm:rounded-3xl shadow-lg bg-opacity-60 w-[90%] sm:w-auto">
                   <div className="mb-2 sm:mb-4">
@@ -244,8 +247,8 @@ const nextTestimonial = () => {
             </div>
             
             {/* Slide 3 */}
-            <div className='relative h-screen w-full'>
-              <img src={Nature} className='h-full w-full object-cover' alt="Special offer" />
+            <div className='relative h-[80vh] w-full'>
+              <img src={Slider3} className='h-full w-full object-cover' alt="Special offer" />
               <div className="absolute inset-0 flex flex-col justify-center items-center bg-gradient-to-t from-black/70 via-black/50 to-black/30 text-white p-2 sm:p-4">
                 <div className="max-w-4xl text-center px-3 sm:px-6 py-4 sm:py-10 bg-gradient-to-b from-white to-gray-100 rounded-2xl sm:rounded-3xl shadow-xl w-[90%] sm:w-auto">
                   {/* Special Offer Badge */}
@@ -360,9 +363,10 @@ const nextTestimonial = () => {
           </div> */}
         </div>
 
+
         {/* Services Section */}
         <div className="w-full flex flex-col items-center px-4">
-          <div className='h-[20vh] w-full border-2 flex items-center justify-center rounded-xl'>
+          <div className='h-[20vh] w-full border-2  flex items-center justify-center rounded-xl'>
             <p className='font-semibold font-serif text-4xl py-4'>Our <span className='text-red-600'>Services</span></p>
           </div>
           <h2 className="text-xl font-bold mt-8">HOTEL FACILITIES</h2>
@@ -478,9 +482,9 @@ const nextTestimonial = () => {
                 <p className="text-gray-400 line-through">{offer.price}</p>
                 <p className="text-red-600 font-semibold">{offer.discount}</p>
               </div>
-              <button className="mt-4 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
+              <a href='/contact' className="mt-4 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">
                 Book Now
-              </button>
+              </a>
             </div>
           </div>
         ))}

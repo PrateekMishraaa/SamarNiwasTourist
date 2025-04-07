@@ -8,7 +8,7 @@ import Gallery from './Pages/Gallery'
 import Places from './Pages/Places'
 import Payment from './Pages/Payment'
 import PageNotFound from './Pages/PageNotFound'
-import SignUp from './Pages/SignUp'
+// import SignUp from './Pages/SignUp'
 const App = () => {
   return (
     <>
