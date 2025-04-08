@@ -3,7 +3,7 @@ import { FaHeadphones, FaYoutube, FaBars, FaTimes } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa6";
-import Logo from "../assets/removebg-logo.png";
+import Logo from "../assets/newlogo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,12 +12,19 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-gray-900 text-white w-full">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          {/* Logo Section */}
-          <a href="/" className="relative">
-            <img src={Logo} alt="RCH Logo" className="h-20 -mt-4" />
-          </a>
+      {/* Top Navbar */}
+      <nav className="bg-red-700 text-white w-full">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center relative">
+          {/* Logo Section - Now positioned with negative margin to allow it to extend beyond the navbar */}
+          <div className="flex items-center">
+            <a href="/" className="relative">
+              <img
+                src={Logo}
+                alt="RCH Logo"
+                className="h-32 object-contain -my-4" // Increased height and added negative margin
+              />
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
@@ -29,17 +36,17 @@ const Navbar = () => {
           {/* Desktop Contact Info & Social Media */}
           <div className="hidden lg:flex items-center space-x-6">
             <a href="tel:+919971855186" className="flex items-center space-x-2 hover:text-blue-300 transition duration-300">
-              <FaHeadphones className="text-xl text-blue-500" />
+              <FaHeadphones className="text-xl text-white hover:text-blue-700 transition" />
               <span className="font-bold font-serif">+91-9971855186</span>
             </a>
             <a href="mailto:booking@rchronline.com" className="flex items-center space-x-2 hover:text-red-300 transition duration-300">
-              <SiGmail className="text-xl text-red-500" />
+              <SiGmail className="text-xl text-white hover:text-red-900 transition" />
               <span className="font-bold font-serif">booking@rchronline.com</span>
             </a>
             <div className="flex space-x-4">
-              <a href="#" className="hover:opacity-75 transition duration-300"><BsInstagram className="text-pink-700 text-xl" /></a>
-              <a href="#" className="hover:opacity-75 transition duration-300"><FaFacebookF className="text-blue-700 text-xl" /></a>
-              <a href="#" className="hover:opacity-75 transition duration-300"><FaYoutube className="text-red-700 text-2xl" /></a>
+              <a href="#" className="hover:opacity-75 transition duration-300"><BsInstagram className="text-white text-xl" /></a>
+              <a href="#" className="hover:opacity-75 transition duration-300"><FaFacebookF className="text-white text-xl" /></a>
+              <a href="#" className="hover:opacity-75 transition duration-300"><FaYoutube className="text-white text-2xl" /></a>
             </div>
           </div>
         </div>
@@ -63,9 +70,7 @@ const Navbar = () => {
                 { href: '/rooms', text: 'Rooms' },
                 { href: '/gallery', text: 'Gallery' },
                 { href: '/places-to-visit', text: 'Places To Visit' },
-                // { href: '/payment', text: 'Payment' },
                 { href: '/contact', text: 'Contact' },
-                // { href: '/signup', text: 'Signup' },
                 { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
               ].map(({ href, text, className }) => (
                 <li key={href}>

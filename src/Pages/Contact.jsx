@@ -22,22 +22,22 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         if (!formData.FullName || !formData.Email || !formData.MobileNumber || !formData.Message) {
             toast.error("Please check! All fields are required.");
             return;
         }
-
+    
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/contact",
+                "https://samarniwasbackend-4.onrender.com/api/contact", // ✅ Correct endpoint
                 formData,
                 { headers: { "Content-Type": "application/json" } }
             );
-
+    
             toast.success("Message sent successfully!");
             console.log("Message sent successfully", response.data);
-
+    
             setFormData({
                 FullName: "",
                 Email: "",
@@ -49,6 +49,7 @@ const Contact = () => {
             toast.error("Something went wrong, please try again!");
         }
     };
+    
 
     return (
         <>
