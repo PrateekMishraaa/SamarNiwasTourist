@@ -162,19 +162,19 @@ const Places = () => {
                     >
                       <motion.li variants={item} className="flex items-center">
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
-                        5 minutes walk from Naina Devi Temple
+                        Behind Ajanta Hotel
                       </motion.li>
                       <motion.li variants={item} className="flex items-center">
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
-                        2 minutes walk from Naini Lake
+                        Near Kumar Sweet Shop
                       </motion.li>
                       <motion.li variants={item} className="flex items-center">
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
-                        10 minutes walk from Mall Road shopping center
+                        Opposite Ajanta Hotel & Near RTO Office
                       </motion.li>
                       <motion.li variants={item} className="flex items-center">
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
-                        15 minutes drive from Nainital Bus Stand
+                        The hotel is approximately 13 kilometers (8 miles) away from the ISBT Bus Station Dehradun
                       </motion.li>
                     </motion.ul>
                   </div>
