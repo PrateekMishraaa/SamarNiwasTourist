@@ -463,115 +463,94 @@ const HomePage = () => {
 
         {/* Rooms Section */}
         <motion.div 
-          className='min-h-[60vh] w-full flex flex-col lg:flex-row justify-between px-4 sm:px-6 md:px-10 py-4 bg-gray-100'
-          variants={fadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+  className="min-h-[70vh] w-full flex flex-col lg:flex-row justify-center px-4 sm:px-6 md:px-10 py-10 bg-gradient-to-r from-gray-100 to-white"
+  variants={fadeIn}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.1 }}
+>
+  <div className="w-full lg:w-[85%] p-4">
+    <motion.p 
+      className="font-bold font-serif text-2xl sm:text-3xl md:text-4xl text-center mb-2"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      Explore Our <span className="text-red-500 underline underline-offset-4">Rooms</span>
+    </motion.p>
+    <motion.p 
+      className="text-sm sm:text-base font-medium text-yellow-800 text-center mb-8"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ delay: 0.2 }}
+    >
+      Choose a room that best suits your comfort and budget
+    </motion.p>
+
+    {/* Room Cards */}
+    <motion.div 
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      variants={staggeredContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      {/* Helper function idea for reusable cards */}
+      {[{
+        title: "Deluxe Room",
+        description: "Mountain view with premium amenities",
+        price: "₹3,999/night",
+        image: RoomOne,
+        tag: "Popular",
+      }, {
+        title: "Standard Room",
+        description: "Cozy comfort for budget travelers",
+        price: "₹2,499/night",
+        image: RoomTwo,
+        tag: "Best Value",
+      }, {
+        title: "Family Suite",
+        description: "Spacious rooms for the whole family",
+        price: "₹5,999/night",
+        image: RoomThree,
+        tag: "New",
+      }].map(({ title, description, price, image, tag }, index) => (
+        <motion.div 
+          key={index}
+          className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-transform hover:scale-105 duration-300 relative"
+          variants={staggeredItem}
         >
-          <div className='h-full w-full lg:w-[80%] p-4'>
-            <motion.p 
-              className='font-semibold font-serif text-xl sm:text-2xl md:text-3xl'
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              Explore Our <span className='text-red-500'>Rooms</span>
-            </motion.p>
-            <motion.p 
-              className='text-xs sm:text-sm font-semibold font-serif text-yellow-700'
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              Choose a room according to your budget
-            </motion.p>
-            
-            {/* Room Cards */}
-            <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6"
-              variants={staggeredContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              {/* Room Card 1 */}
-              <motion.div 
-                className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105"
-                variants={staggeredItem}
+          <div className="h-48 sm:h-40 md:h-48 overflow-hidden rounded-t-2xl">
+            <img src={image} alt={title} className="w-full h-full object-cover" />
+          </div>
+          <div className="p-5">
+            <div className="flex items-center justify-between">
+              <h3 className="font-bold text-lg">{title}</h3>
+              <span className="bg-red-100 text-red-600 text-xs font-semibold px-2 py-1 rounded-full">
+                {tag}
+              </span>
+            </div>
+            <p className="text-gray-600 text-sm mt-1">{description}</p>
+            <div className="flex justify-between items-center mt-5">
+              <span className="font-bold text-red-500 text-base">{price}</span>
+              <motion.button 
+                className="bg-gray-900 text-white text-sm px-4 py-1.5 rounded-lg hover:bg-red-500 transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <div className="h-48 sm:h-40 md:h-48">
-                  <img src={RoomOne} alt="Deluxe Room" className="w-full h-full object-cover" />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-lg">Deluxe Room</h3>
-                  <p className="text-gray-600 text-sm">Mountain view with premium amenities</p>
-                  <div className="flex justify-between items-center mt-4">
-                    <span className="font-bold text-red-500">₹3,999/night</span>
-                    <motion.button 
-                      className="bg-gray-900 text-white text-sm px-3 py-1 rounded-lg hover:bg-red-500 transition-colors cursor-pointer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      View Details
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-              
-              {/* Room Card 2 */}
-              <motion.div 
-                className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105"
-                variants={staggeredItem}
-              >
-                <div className="h-48 sm:h-40 md:h-48">
-                  <img src={RoomTwo} alt="Standard Room" className="w-full h-full object-cover" />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-lg">Standard Room</h3>
-                  <p className="text-gray-600 text-sm">Cozy comfort for budget travelers</p>
-                  <div className="flex justify-between items-center mt-4">
-                    <span className="font-bold text-red-500">₹2,499/night</span>
-                    <motion.button 
-                      className="bg-gray-900 text-white text-sm px-3 py-1 rounded-lg hover:bg-red-500 transition-colors cursor-pointer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      View Details
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-              
-              {/* Room Card 3 */}
-              <motion.div 
-                className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105"
-                variants={staggeredItem}
-              >
-                <div className="h-48 sm:h-40 md:h-48">
-                  <img src={RoomThree} alt="Family Suite" className="w-full h-full object-cover" />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-lg">Family Suite</h3>
-                  <p className="text-gray-600 text-sm">Spacious rooms for the whole family</p>
-                  <div className="flex justify-between items-center mt-4">
-                    <span className="font-bold text-red-500">₹5,999/night</span>
-                    <motion.button 
-                      className="bg-gray-900 text-white text-sm px-3 py-1 rounded-lg hover:bg-red-500 transition-colors cursor-pointer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      View Details
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
+                View Details
+              </motion.button>
+            </div>
           </div>
         </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</motion.div>
+
 
      
      {/* Services Section */}
@@ -594,15 +573,23 @@ const HomePage = () => {
     </motion.p>
   </motion.div>
 </div>
-          <h2 className="text-xl font-bold mt-8">HOTEL FACILITIES</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 w-full max-w-5xl">
-            {services.map((service, index) => (
-              <div key={index} className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg border hover:shadow-lg transition-all">
-                {service.icon}
-                <p className="mt-2 font-semibold">{service.label}</p>
-              </div>
-            ))}
-          </div>
+          <h2 className="text-xl font-bold mt-8 ml-32 font-semibold font-serif ">HOTEL FACILITIES</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 w-full max-w-6xl mx-auto px-4">
+  {services.map((service, index) => (
+    <div 
+      key={index} 
+      className="flex flex-col items-center justify-center p-6 bg-white shadow-md rounded-2xl border border-gray-200 hover:shadow-xl hover:border-red-400 transition-all duration-300 group"
+    >
+      <div className="text-4xl text-red-500 mb-3 transition-transform duration-300 group-hover:scale-110">
+        {service.icon}
+      </div>
+      <p className="mt-2 text-center text-base font-semibold text-gray-800 group-hover:text-red-500 transition-colors duration-300">
+        {service.label}
+      </p>
+    </div>
+  ))}
+</div>
+
         </div>
 
         {/* Gallery Section */}

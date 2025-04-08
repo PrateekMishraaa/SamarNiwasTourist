@@ -38,7 +38,7 @@ const Footer = () => {
           <ul className="space-y-2">
             {["Home", "About Us", "Rooms", "Gallery", "Places To Visit", "Contact Us"].map((item) => (
               <li key={item}>
-                <a href="/" className="text-sm font-semibold text-white hover:text-red-400 transition">{item}</a>
+                <a href="/" className="text-sm font-semibold text-white hover:text-black transition">{item}</a>
               </li>
             ))}
           </ul>
@@ -51,7 +51,7 @@ const Footer = () => {
           <ul className="space-y-2">
             {["FAQ", "Privacy Policy", "Payment Options", "Cancellation & Refund"].map((item) => (
               <li key={item}>
-                <a href="/" className="text-sm font-semibold text-white hover:text-red-400 transition">{item}</a>
+                <a href="/" className="text-sm font-semibold text-white hover:text-black transition">{item}</a>
               </li>
             ))}
           </ul>
@@ -64,7 +64,7 @@ const Footer = () => {
           <ul className="space-y-2">
             {["Free Wifi", "Restaurant", "Parking"].map((item) => (
               <li key={item}>
-                <a href="#" className="text-sm font-semibold text-white hover:text-red-400 transition">{item}</a>
+                <a href="#" className="text-sm font-semibold text-white hover:text-black transition">{item}</a>
               </li>
             ))}
           </ul>
@@ -77,7 +77,7 @@ const Footer = () => {
           <ul className="flex space-x-4 mt-4">
             {[BsInstagram, FaFacebookF, FaYoutube].map((Icon, index) => (
               <li key={index}>
-                <a href="#" className="text-xl text-white hover:text-red-900 transition">
+                <a href="#" className="text-xl text-white hover:text-black transition">
                   <Icon className=''/>
                 </a>
               </li>

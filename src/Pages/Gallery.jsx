@@ -8,14 +8,14 @@ import RoomTwo from "../assets/samarroom2.jpeg";
 import RoomThree from "../assets/samarroom3.jpeg";
 import RoomFour from "../assets/latest1.jpeg";
 import RoomFive from "../assets/latest2.jpeg";
-import RoomSix from "../assets/latest3.jpeg";
-import RoomSeven from "../assets/room7.webp";
-import RoomEight from "../assets/room8.webp";
-import RoomNine from "../assets/room9.jpeg";
-import RoomTen from "../assets/room10.jpeg";
-import RoomEleven from "../assets/room11.jpeg";
-import RoomTwelve from "../assets/room12.jpeg";
-import RoomThirteen from "../assets/room13.jpeg";
+import RoomSix from "../assets/newroom.jpeg";
+import RoomSeven from "../assets/newroomtwo.jpeg";
+import RoomEight from "../assets/newroomthree.jpeg";
+import RoomNine from "../assets/newroomfour.jpeg";
+import RoomTen from "../assets/newroomfive.jpeg";
+import RoomEleven from "../assets/newroomsix.jpeg";
+import RoomTwelve from "../assets/newroomseven.jpeg";
+import RoomThirteen from "../assets/newroomthree.jpeg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
