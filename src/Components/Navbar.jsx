@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Navbar */}
-      <nav className="bg-red-700 text-white w-full">
+      <nav className="bg-red-700 text-white w-full h-20">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center relative">
           {/* Logo Section - Now positioned with negative margin to allow it to extend beyond the navbar */}
           <div className="flex items-center">
@@ -21,7 +21,7 @@ const Navbar = () => {
               <img
                 src={Logo}
                 alt="RCH Logo"
-                className="h-32 object-contain -my-4" // Increased height and added negative margin
+                className="h-44 object-contain -my-12" // Increased height and added negative margin
               />
             </a>
           </div>
@@ -35,18 +35,18 @@ const Navbar = () => {
 
           {/* Desktop Contact Info & Social Media */}
           <div className="hidden lg:flex items-center space-x-6">
-            <a href="tel:+919971855186" className="flex items-center space-x-2 hover:text-blue-300 transition duration-300">
+            <a href="tel:+919971855186" className="flex items-center space-x-2 hover:text-green-400 transition duration-300">
               <FaHeadphones className="text-xl text-white hover:text-blue-700 transition" />
               <span className="font-bold font-serif">+91-9971855186</span>
             </a>
-            <a href="mailto:booking@rchronline.com" className="flex items-center space-x-2 hover:text-red-300 transition duration-300">
-              <SiGmail className="text-xl text-white hover:text-red-900 transition" />
+            <a href="mailto:booking@rchronline.com" className="flex items-center space-x-2 hover:text-green-400 transition duration-300">
+              <SiGmail className="text-xl text-white hover:text-blue-700 transition" />
               <span className="font-bold font-serif">booking@rchronline.com</span>
             </a>
             <div className="flex space-x-4">
-              <a href="#" className="hover:opacity-75 transition duration-300"><BsInstagram className="text-white text-xl" /></a>
-              <a href="#" className="hover:opacity-75 transition duration-300"><FaFacebookF className="text-white text-xl" /></a>
-              <a href="#" className="hover:opacity-75 transition duration-300"><FaYoutube className="text-white text-2xl" /></a>
+              <a href="https://www.instagram.com/" className="hover:opacity-75 transition duration-300"><BsInstagram className="text-white text-xl" /></a>
+              <a href="https://www.facebook.com/" className="hover:opacity-75 transition duration-300"><FaFacebookF className="text-white text-xl" /></a>
+              <a href="https://www.youtube.com/" className="hover:opacity-75 transition duration-300"><FaYoutube className="text-white text-2xl" /></a>
             </div>
           </div>
         </div>
@@ -57,9 +57,9 @@ const Navbar = () => {
             <a href="tel:+919971855186" className="block py-2 hover:bg-gray-700 p-2 rounded">Call: +91-9971855186</a>
             <a href="mailto:booking@rchronline.com" className="block py-2 hover:bg-gray-700 p-2 rounded">Email: booking@rchronline.com</a>
             <div className="flex justify-center space-x-4 py-2">
-              <a href="#" className="hover:opacity-75 transition duration-300"><BsInstagram className="text-pink-700 text-xl" /></a>
+              <a href="#" className="hover:opacity-75 transition duration-300"><BsInstagram className="text-pink-900 text-xl" /></a>
               <a href="#" className="hover:opacity-75 transition duration-300"><FaFacebookF className="text-blue-700 text-xl" /></a>
-              <a href="#" className="hover:opacity-75 transition duration-300"><FaYoutube className="text-red-700 text-2xl" /></a>
+              <a href="#" className="hover:opacity-75 transition duration-300"><FaYoutube className="text-red-900 text-2xl" /></a>
             </div>
 
             {/* Mobile Navigation Links */}
@@ -95,7 +95,7 @@ const Navbar = () => {
               { href: '/gallery', text: 'Gallery' },
               { href: '/places-to-visit', text: 'Places To Visit' },
               { href: '/contact', text: 'Contact' },
-              { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2' }
+              { href: '/contact', text: 'Book Now', className: 'bg-red-700 text-white rounded-xl px-3 py-2 hover:text-green-500 transition' }
             ].map(({ href, text, className }) => (
               <li key={href} className="px-2 py-1">
                 <a href={href} className={`block px-3 py-2 hover:bg-red-700 hover:text-white rounded transition duration-300 ${className || ''}`}>

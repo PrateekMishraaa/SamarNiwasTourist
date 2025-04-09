@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Slider from 'react-slick';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-import Room from "../assets/room.webp";
+import Room from "../assets/newroomseven.jpeg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -36,6 +36,7 @@ const About = () => {
     "I was visiting Nainital with my family. We had a pet with us, and the hotel was considerate to accommodate all of us. I would highly recommend it!",
     "The rooms were super clean, breakfast was delightful, and the view was breathtaking!",
     "One of the best stays I've ever had. Amazing hospitality and peaceful surroundings.",
+    "Hotels in Dehradun With Good-View"
   ];
 
   const settings = {
@@ -80,8 +81,9 @@ const About = () => {
             INTRODUCTION OF <span>SAMAR-<span className="text-yellow-400 font-bold">NIWAS</span> DEHRADUN</span>
           </p>
           <p className="text-sm sm:text-base py-6">
-            It is surrounded by tall pine & oak trees, the hotel gives you a true feel of a vacation in a hill station...
-          </p>
+  Nestled amidst tall pine and oak trees, this hill station hotel offers a serene escape into nature. Perfect for a peaceful vacation, the hotel provides stunning mountain views, fresh air, and a relaxing environment ideal for couples, families, and solo travelers looking to unwind in the hills.
+</p>
+
         </motion.div>
 
         <motion.div
@@ -106,7 +108,7 @@ const About = () => {
             Our Mission & Vision
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 gap-10 items-start">
+          <div className="grid md:grid-cols-2 gap-10 items-start cursor-pointer">
             {/* Mission */}
             <motion.div
               className="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition-shadow duration-300"
@@ -117,9 +119,9 @@ const About = () => {
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="bg-red-100 p-4 rounded-full text-red-500 text-2xl">🎯</div>
-                <h3 className="text-xl font-semibold text-red-600">Our Mission</h3>
+                <h3 className="text-xl font-bold text-red-600">Our Mission</h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed font-semibold">
                 To provide exceptional hospitality and unforgettable experiences in the lap of nature...
               </p>
             </motion.div>
@@ -134,9 +136,9 @@ const About = () => {
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="bg-yellow-100 p-4 rounded-full text-yellow-500 text-2xl">🌄</div>
-                <h3 className="text-xl font-semibold text-yellow-600">Our Vision</h3>
+                <h3 className="text-xl font-bold text-yellow-600">Our Vision</h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed font-semibold">
                 To become the most loved hill resort in Uttarakhand by promoting local culture...
               </p>
             </motion.div>
@@ -217,14 +219,14 @@ const About = () => {
 
       {/* CTA */}
       <motion.section
-        className="bg-gray-600 text-white text-center py-10 px-4"
+        className="bg-gray-900 text-white text-center py-10 px-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-3xl font-bold mb-4">Plan Your Stay with Us</h2>
-        <p className="mb-6">Book now and experience the ultimate hill station hospitality</p>
-        <a href='/contact' className="bg-white text-red-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100">
+        <h2 className="text-3xl font-bold mb-4 text-green-400">Plan Your Stay with Us</h2>
+        <p className="mb-6 font-semibold">Book now and experience the ultimate hill station hospitality</p>
+        <a href='/contact' className="bg-white text-red-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 hover:bg-red-400 hover:text-white transition">
           Book Now
         </a>
       </motion.section>
