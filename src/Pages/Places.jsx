@@ -27,7 +27,7 @@ const Places = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial="hidden"
       animate="visible"
       variants={fadeIn}
@@ -36,49 +36,49 @@ const Places = () => {
       <Navbar />
 
       {/* Hero Section with Parallax Effect */}
-      <div 
-        className="w-full h-[40vh] bg-cover bg-center bg-black" 
+      <div
+        className="w-full h-[40vh] bg-cover bg-center bg-black"
 
       >
         <div className="w-full h-full relative flex flex-col justify-center items-center text-center px-4">
-      {/* This is the background layer */}
-      <div className="absolute inset-0 bg-black/50 z-0"></div>
-      
-      {/* This is the animated fill layer */}
-      <motion.div 
-        className="absolute inset-0 bg-red-600/70 origin-left z-10"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
-      ></motion.div>
-      
-      {/* Content that sits on top of both layers */}
-      <div className="relative z-20 text-white">
-        <motion.h1
-          className="text-4xl md:text-5xl font-bold font-serif"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Samar Niwas Location
-        </motion.h1>
-        <motion.p
-          className="mt-4 text-lg md:text-xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
-          Find your way to our peaceful mountain retreat
-        </motion.p>
-      </div>
-    </div>
+          {/* This is the background layer */}
+          <div className="absolute inset-0 bg-black/50 z-0"></div>
+
+          {/* This is the animated fill layer */}
+          <motion.div
+            className="absolute inset-0 bg-red-600/70 origin-left z-10"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          ></motion.div>
+
+          {/* Content that sits on top of both layers */}
+          <div className="relative z-20 text-white">
+            <motion.h1
+              className="text-4xl md:text-5xl font-bold font-serif"
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              Samar Niwas Location
+            </motion.h1>
+            <motion.p
+              className="mt-4 text-lg md:text-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              Find your way to our peaceful mountain retreat
+            </motion.p>
+          </div>
+        </div>
       </div>
       {/* Location Details with Improved Design */}
       <section className="min-h-screen w-full flex flex-col items-center py-24 bg-gradient-to-b from-gray-50 to-gray-100">
         <div className="w-[90%] md:w-[80%] max-w-6xl mx-auto">
-          
+
           {/* Section Title */}
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ const Places = () => {
               Experience the tranquility of the mountains with easy access to all the wonders of Dehradun
             </p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Address and Contact Info */}
             <motion.div
@@ -111,7 +111,7 @@ const Places = () => {
                 </span>
                 Find Us
               </h2>
-              
+
               <div className="space-y-8 text-gray-700">
                 <div className="flex">
                   <span className="text-red-600 mr-4 mt-1">
@@ -120,8 +120,8 @@ const Places = () => {
                     </svg>
                   </span>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Address</h3>
-                    <p className="text-lg leading-relaxed">
+                    <h3 className="text-xl font-semibold mb-2 font-serif">Address</h3>
+                    <p className="text-lg leading-relaxed font-semibold">
                       Samar Niwas<br />
                       Rajpur Rd, Chander Lok Colony,<br />
                       Near Ajanta Hotel, Dehradun,<br />
@@ -129,7 +129,7 @@ const Places = () => {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex">
                   <span className="text-red-600 mr-4 mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -137,14 +137,14 @@ const Places = () => {
                     </svg>
                   </span>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Contact</h3>
-                    <p className="text-lg">
+                    <h3 className="text-xl font-semibold mb-2 font-serif">Contact</h3>
+                    <p className="text-lg font-semibold">
                       Phone: <a href="tel:+919971855186" className="text-red-600 hover:underline">+91-9971855186</a><br />
                       Email: <a href="mailto:booking@rchronline.com" className="text-red-600 hover:underline">booking@rchronline.com</a>
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex">
                   <span className="text-red-600 mr-4 mt-1">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -152,27 +152,27 @@ const Places = () => {
                     </svg>
                   </span>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Landmarks Nearby</h3>
-                    <motion.ul 
+                    <h3 className="text-xl font-semibold mb-2 font-serif">Landmarks Nearby</h3>
+                    <motion.ul
                       className="space-y-2 text-lg"
                       variants={container}
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true }}
                     >
-                      <motion.li variants={item} className="flex items-center">
+                      <motion.li variants={item} className="flex items-center font-semibold">
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
                         Behind Ajanta Hotel
                       </motion.li>
-                      <motion.li variants={item} className="flex items-center">
+                      <motion.li variants={item} className="flex items-center font-semibold">
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
                         Near Kumar Sweet Shop
                       </motion.li>
-                      <motion.li variants={item} className="flex items-center">
+                      <motion.li variants={item} className="flex items-center  font-semibold">
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
                         Opposite Ajanta Hotel & Near RTO Office
                       </motion.li>
-                      <motion.li variants={item} className="flex items-center">
+                      <motion.li variants={item} className="flex items-center font-semibold">
                         <span className="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
                         The hotel is approximately 13 kilometers (8 miles) away from the ISBT Bus Station Dehradun
                       </motion.li>
@@ -181,7 +181,7 @@ const Places = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Map Placeholder (you can integrate a real map) */}
             <motion.div
               className="bg-white rounded-3xl shadow-xl overflow-hidden h-full"
@@ -193,9 +193,9 @@ const Places = () => {
               <div className="relative h-full w-full bg-gray-200">
                 {/* Replace with actual map implementation */}
                 <div className="absolute inset-0 bg-[url('https://www.google.com/maps/search/samar+niwas+map/@28.6325725,76.9205105,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDQwNi4wIKXMDSoJLDEwMjExNjM5SAFQAw%3D%3D')] bg-cover bg-center"></div>
-                
+
                 {/* Location Pin Animation */}
-                <motion.div 
+                <motion.div
                   className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: [0, -15, 0], opacity: 1 }}
@@ -210,7 +210,7 @@ const Places = () => {
               </div>
             </motion.div>
           </div>
-          
+
           {/* How to Reach Section */}
           <motion.div
             className="mt-20 bg-white rounded-3xl shadow-xl p-10 border border-gray-100"
@@ -227,49 +227,50 @@ const Places = () => {
               </span>
               How to Reach
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <motion.div 
+              <motion.div
                 className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 variants={item}
               >
                 <div className="text-red-600 text-5xl mb-5">✈️</div>
                 <h3 className="text-2xl font-semibold mb-4 text-gray-800">By Air</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  The nearest airport is Pantnagar Airport (PGH), approximately 65 km away. 
+                <p className="text-gray-600 leading-relaxed font-semibold">
+                  The nearest airport is Pantnagar Airport (PGH), approximately 65 km away.
                   Taxis are available from the airport to Nainital for a scenic journey.
                 </p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 variants={item}
               >
                 <div className="text-red-600 text-5xl mb-5">🚂</div>
-                <h3 className="text-2xl font-semibold mb-4 text-gray-800">By Train</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-semibold mb-4 text-gray-800 ">By Train</h3>
+                <p className="text-gray-600 leading-relaxed font-semibold">
                   Kathgodam Railway Station is the nearest railhead, about 35 km away.
                   Regular taxis and shared cabs are available from the station.
                 </p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
                 whileHover={{ y: -5, transition: { duration: 0.3 } }}
                 variants={item}
               >
+                {/*  */}
                 <div className="text-red-600 text-5xl mb-5">🚌</div>
                 <h3 className="text-2xl font-semibold mb-4 text-gray-800">By Bus</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed font-semibold">
                   Regular bus services connect Nainital to major cities including Delhi,
                   Dehradun, and Haldwani. The bus stand is just 3 km from Samar Niwas.
                 </p>
               </motion.div>
             </div>
           </motion.div>
-          
+
           {/* Travel Tips with Better Visual Design */}
           <motion.div
             className="mt-20 bg-gradient-to-r from-red-600 to-pink-600 rounded-3xl shadow-xl p-10 text-white"
@@ -286,9 +287,9 @@ const Places = () => {
               </span>
               Travel Tips
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div 
+              <motion.div
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl"
                 variants={item}
               >
@@ -300,8 +301,8 @@ const Places = () => {
                   March to June and September to November offer the most pleasant weather in Nainital, with clear skies and comfortable temperatures.
                 </p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl"
                 variants={item}
               >
@@ -313,8 +314,8 @@ const Places = () => {
                   Auto-rickshaws, taxis, and cycle-rickshaws are readily available for local sightseeing. Many attractions are within walking distance from Samar Niwas.
                 </p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl"
                 variants={item}
               >
@@ -326,8 +327,8 @@ const Places = () => {
                   Limited parking is available at Samar Niwas. Additional paid parking facilities are available nearby for your convenience.
                 </p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl"
                 variants={item}
               >
@@ -341,9 +342,9 @@ const Places = () => {
               </motion.div>
             </div>
           </motion.div>
-          
+
           {/* Call to Action */}
-          <motion.div 
+          <motion.div
             className="mt-20 text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

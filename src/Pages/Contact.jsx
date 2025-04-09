@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaHeadphones } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import Footer from "../Components/Footer";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
+import gsap from "gsap";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
@@ -16,28 +17,60 @@ const Contact = () => {
         Message: "",
     });
 
+    const btnRef = useRef(null); 
+
+    useEffect(() => {
+        const btn = btnRef.current;
+
+        const handleEnter = () => {
+            gsap.to(btn, {
+                scale: 1.05,
+                boxShadow: "0 0 20px rgba(255, 0, 0, 0.6)",
+                duration: 0.3,
+                ease: "power2.out",
+            });
+        };
+
+        const handleLeave = () => {
+            gsap.to(btn, {
+                scale: 1,
+                boxShadow: "none",
+                duration: 0.3,
+                ease: "power2.inOut",
+            });
+        };
+
+        btn.addEventListener("mouseenter", handleEnter);
+        btn.addEventListener("mouseleave", handleLeave);
+
+        return () => {
+            btn.removeEventListener("mouseenter", handleEnter);
+            btn.removeEventListener("mouseleave", handleLeave);
+        };
+    }, []);
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         if (!formData.FullName || !formData.Email || !formData.MobileNumber || !formData.Message) {
             toast.error("Please check! All fields are required.");
             return;
         }
-    
+
         try {
             const response = await axios.post(
-                "https://samarniwasbackend-4.onrender.com/api/contact", // ✅ Correct endpoint
+                "http://localhost:4000/api/contact",
                 formData,
                 { headers: { "Content-Type": "application/json" } }
             );
-    
+
             toast.success("Message sent successfully!");
             console.log("Message sent successfully", response.data);
-    
+
             setFormData({
                 FullName: "",
                 Email: "",
@@ -49,7 +82,6 @@ const Contact = () => {
             toast.error("Something went wrong, please try again!");
         }
     };
-    
 
     return (
         <>
@@ -95,7 +127,8 @@ const Contact = () => {
                         onChange={handleChange}
                     />
                     <button
-                        className="h-12 w-full md:w-40 border-2 rounded-xl font-semibold font-serif text-white bg-red-700 hover:bg-red-800 transition duration-300"
+                        ref={btnRef}
+                        className="h-12 w-full md:w-40 border-2 rounded-xl font-semibold font-serif text-white bg-red-700 transition duration-300"
                         type="submit"
                     >
                         Send Message
@@ -133,10 +166,10 @@ const Contact = () => {
                 </div>
             </section>
 
-            {/* Google Map Full Width - Before Footer */}
+            {/* Google Map */}
             <div className="w-full mt-12 px-4">
                 <h3 className="text-2xl font-semibold text-center font-serif">Find Us on Map</h3>
-                <div className=" rounded-xl overflow-hidden mt-4">
+                <div className="rounded-xl overflow-hidden mt-4">
                     <iframe
                         title="Google Map"
                         className="w-full h-80 md:h-96"
@@ -155,3 +188,15 @@ const Contact = () => {
 };
 
 export default Contact;
+// shri guru charan sarojjiraj nij man mukur sudhar barnau raghubar vimal jasu jo dayak fal chari.
+// buddhiheen tanu jaanike sumiro pawan kumar bal buddhi vidhya dehu mohi harahu kalesh vikar.
+// jai hanuman gyan gun-sagar
+
+
+// Shri Guru Charan Saroj Raj, Nij manu mukuru sudhaari  
+// Baranau Raghuvar bimal jasu, jo daayaku phal chaari  
+
+// Buddhi heen tanu jaanike, sumirau Pavan Kumar  
+// Bal buddhi vidya dehu mohi, harahu kalesh vikaar  
+
+// Jai Hanuman gyaan gun saagar

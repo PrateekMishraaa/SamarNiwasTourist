@@ -5,14 +5,14 @@ import Footer from '../Components/Footer';
 const PageNotFound = () => {
   return (
     <>
-    <div>
-    <Navbar/>
-    <div className='h-[100vh] w-full '>
-        <img src={NotFound} alt="" className='h-full w-full' />
-    </div>
-    <Footer/>
-    </div>
-    
+      <div>
+        <Navbar />
+        <div className='h-[100vh] w-full '>
+          <img src={NotFound} alt="" className='h-full w-full' />
+        </div>
+        <Footer />
+      </div>
+
     </>
   )
 }

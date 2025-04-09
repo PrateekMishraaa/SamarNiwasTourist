@@ -30,7 +30,7 @@ const Payment = () => {
         </div>
       </section>
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
